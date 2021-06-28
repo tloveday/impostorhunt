@@ -50,17 +50,21 @@ footer{
     align-items: center;
     border-width: 2px;
     border-style: solid;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    transition: transform 500ms ease-in-out;
 }
 
 .card-front{
     background:#d6e0f0;
     border-color: #f91f00;
-     backface-visibility: hidden;
     transform: rotateY(180deg);
 }
 .card-back{
     background:#3f474e;
     border-color: #d6e0f0;
+    transform: rotateY(0);
+    backface-visibility: hidden;
 }
 
 /*-------------Game Structure---------------------*/
@@ -72,4 +76,13 @@ footer{
     margin-top: 20px;
     margin-bottom: 20px;
     perspective: 500px;
+}
+
+/* ------ Animation ----- */
+.card:hover .card-back{
+    transform: rotateY(-180deg);
+}
+
+.card:hover .card-front{
+    transform: rotateY(0deg);
 }
