@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     //Cards In Memory Game
     let cards = Array.from(document.getElementsByClassName('card'));
 
-    //make the cards 
+    //make the cards clickable with the function 
     cards.forEach(card =>{
       card.addEventListener('click', cardFlip);
     })
@@ -15,6 +15,18 @@ document.addEventListener("DOMContentLoaded", () =>{
     //CardFlip Function
     function cardFlip(){
       this.classList.add('visible');
+      voted();
+      
+      
+
     };
     
+    
 })
+
+//vote tracker rises with each click
+        var votes = 0; 
+        function voted() {
+            votes ++ ;
+            document.getElementById("votes").innerHTML = votes;
+         };
