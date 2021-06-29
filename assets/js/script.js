@@ -23,17 +23,18 @@ document.addEventListener("DOMContentLoaded", () =>{
       voted();
 
       //Give clicks identities to be checked
-      if(!flippedCard){
-          flippedCard = true;
-          card1 = this;
-      }else{ 
-      card2 = this;
-      flippedCard = false;
-      } 
-      //Check for match
-      checkMatch();
+        if(!flippedCard){
+            flippedCard = true;
+            card1 = this;
+        }else{ 
+        card2 = this;
+        flippedCard = false;
 
-    };
+        //Check for match
+        checkMatch();
+        } 
+      
+    }
     
     
 })
@@ -59,14 +60,18 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
 
     //Get Card Information
-    function getCardData(){
-        return (this.getElementsByClassName('card-data')[0].src)
+    function getCardData(card){
+        return card.getElementsByClassName('card-data')[0].src
     }
 
     //Check Match
     function checkMatch(){
-        if (this.getCardData(card1) === this.getCardData(card2)){
-            cardMatch();
+
+    card1Data = getCardData(card1)
+    card2Data = getCardData(card2)
+    
+    if (card1Data === card2Data){
+            //cardMatch();
         }
         else{cardMisMatch()
         }

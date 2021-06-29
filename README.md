@@ -1,59 +1,76 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome tloveday,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
 `python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+# Impostor Hunt
+[View live project here] (website address)
 
-Another blue button should appear to click: _Open Browser_.
+Inspired by Twitch Streamer "Warwick Zero" and the game "Among Us" Imposter Hunt utilises both the main game dynamic of Among Us and that of traditional memory games. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+This is the second of four Mile Stone Projects, and to date the most difficult and on occasion mind melting project I have ever faced.
 
-A blue button should appear to click: _Make Public_,
+The brief was to build an interactive front-end site that responds to users' actions, allowing them to actively engage with data, alter the way the site displays the information to achieve their preferred goals.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Mock Up??
+! [alt text] (img.jpg)
 
-To log into the Heroku toolbelt CLI:
+## User Experience
+### New User
+- Have Fun playing a memory game which adds added win and loss goals.
+- Improve memory.
+- Find information about the streamer "Warwick Zero".
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Returning User
+- Beat previous time completing the hide and seek esque challenge.
+- Beat previous vote count in completing the hide and seek esque challenge.
+- Improve memory
+- Find the social media for the streamer "Warwick Zero".
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+## Design
+### Colour schemes
+The Colour Scheme of the game is inspired by the Among Us' main colour schemes with all character colours taken from the hexadecimal colour palate. 
+### Typography 
+"Press Start 2P" - Imposter Hunt features similar font styling to the game 'Among Us' and stylistic for the game- it is used sparingly in headers for the overall page and all Game Start/Over notices.
 
-## Updates Since The Instructional Video
+"Playfair Display SC" - is a complimentary font to "Press Start 2P" and is clear easier to read when proving the user with information about number of votes (clicks made) cast and the time remaining.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Imagery
+All imagery is inspired by Among US and has been recreated and drawn by the Myself. The Impostor character is completely custom and created off the look of the Streamer Warwick Zero. These are technically fan art.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Languages Used
+HTML
+CSS
+Javascript
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Frameworks used
+Balsamic: used to create the wire frames
+Bootstraps:  
+Font Awesome
+Git
+GitHub
+Google Fonts:
+JQuery
+Procreate: Procreate was used to create the logo, 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Testing
+Validates
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### User goals
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Further Testing
+Website was tested on a variety of browsers including Google Chrome, Safari, Firefox, And Edge.
+The website was viewed on a variety of devices including desktop, laptop and mobile on both iOS and Android.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The Website was provided to friends and family and used on stream by both Warwick Zero and his mod team Vhler in order to obtain unbiased review and feedback on user experience from both the streamer and their chat.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Bugs
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+I found early bugs in using Safari for the game. The cards came pre-flipped and would flip the image across the Y axis as used in the transition this was corrected by hiding the backface of the card face.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+Building the card flip function.
+When adding the initial code all cards would turn face, without the need for a click. Which is counterproductive to the game. I've tried Jquery and could get the action to work but due to insecurities on jQuery knowledge I opted to write in plain javascipt.
 
----
+Through discussion with peers I came across the problem, the mistake and have made and the attempted.
 
-Happy coding!
+## Images
+
+## Problems

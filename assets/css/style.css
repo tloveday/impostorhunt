@@ -86,3 +86,14 @@ footer{
 .card.visible .card-front{
     transform: rotateY(0deg);
 }
+
+/* ------ Media Queries ----- */
+@media (max-width: 600px){
+    .play-area{
+        grid-template-columns: repeat(3, auto);
+    }
+    .card{
+        height: 150px;
+        width: 100px;
+    }
+}
