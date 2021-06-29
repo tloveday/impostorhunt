@@ -80,6 +80,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     //Mismatch
     function cardMisMatch(){
-    card1.classList.remove('visible');
-    card2.classList.remove('visible');
+       //Timeout required so that card reveal of card2 is seen and gives players time to add the card to memory
+        setTimeout(()=>{
+            card1.classList.remove('visible');
+            card2.classList.remove('visible');
+        }, 1000)
     }
