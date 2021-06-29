@@ -25,8 +25,21 @@ document.addEventListener("DOMContentLoaded", () =>{
 })
 
 //vote tracker rises with each click
-        var votes = 0; 
-        function voted() {
-            votes ++ ;
-            document.getElementById("votes").innerHTML = votes;
-         };
+    var votes = 0; 
+    function voted() {
+        votes ++ ;
+        document.getElementById("votes").innerHTML = votes;
+    };
+
+//Timer
+    var time = 100
+    var timer = setInterval(countDown, 1000)
+    
+    function countDown(){
+        time=time-1;
+    
+    if (time <= 0){
+     clearInterval(timer);
+     return;
+    }document.getElementById("time-remaining").innerHTML= time;
+    }
