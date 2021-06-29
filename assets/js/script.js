@@ -7,13 +7,14 @@ document.addEventListener("DOMContentLoaded", () =>{
     //Cards In Memory Game
     let cards = Array.from(document.getElementsByClassName('card'));
 
-
+    //make the cards 
     cards.forEach(card =>{
-        card.addEventListener('click', cardFlip(card));
+      card.addEventListener('click', cardFlip);
     })
 
-    function cardFlip(card){
-       card.classList.add('visible');
+    //CardFlip Function
+    function cardFlip(){
+      this.classList.add('visible');
     };
-
+    
 })
