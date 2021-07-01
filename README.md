@@ -42,14 +42,18 @@ CSS
 Javascript
 
 ## Frameworks used
-Balsamic: used to create the wire frames
-Bootstraps:  
-Font Awesome
-Git
-GitHub
-Google Fonts:
-JQuery
-Procreate: Procreate was used to create the logo, 
+- [Balsamiq:](https://balsamiq.com/)
+    - Balsamiq was used to create the wire frames for design.
+- [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+    - Bootstrap was used to assist with the responsiveness and styling of the website.
+- [Font Awesome:](https://fontawesome.com/)
+- [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+- [GitHub:](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+- [Google Fonts:](https://fonts.google.com/)
+- JQuery
+- [Procreate:] (https://procreate.art/) Procreate was used to create the visuals for the art used throughout the project.
 
 ## Testing
 Validates

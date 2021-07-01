@@ -9,6 +9,7 @@ html{
 body{
     margin: 0;
     background: linear-gradient(#3f474e, #38fedc, #3f474e);
+    overflow-x: hidden;
 }
 
 header{
