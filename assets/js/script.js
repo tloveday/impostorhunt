@@ -2,11 +2,12 @@
 // Credit is given to my mentor Antionio for guidance throughout the document clarifying problems, conflicts.
 
 //variables
-//Cards In Memory Game
+
 let flippedCard = false;
 let card1, card2;
 var time = 100;
 var timer = null;
+
 
 //The Game will wait fo the Dom to complete loading before running
 
