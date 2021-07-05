@@ -1,17 +1,20 @@
 // Credit for getting the game running and working: PortExe, https://www.youtube.com/watch?v=3uuQ3g92oPQ&list=PL4q8dcAYPWjTRKitqOzyyAU2jkRblHTFc&index=6&t=1601s
 // Credit is given to my mentor Antionio for guidance throughout the document clarifying problems, conflicts.
+
 //variables
+//Cards In Memory Game
 let flippedCard = false;
 let card1, card2;
 var time = 100;
 var timer = null;
+
 //The Game will wait fo the Dom to complete loading before running
 
 document.addEventListener("DOMContentLoaded", () =>{
+    
+    let cards = Array.from(document.getElementsByClassName('card'));
     startTimer();
 
-    //Cards In Memory Game
-    let cards = Array.from(document.getElementsByClassName('card'));
 
     //make the cards clickable with the function 
     cards.forEach(card =>{
@@ -78,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () =>{
         timer = setInterval(countDown, 1000);
     }
     
- 
     // CountDown Timer   
     function countDown(){
         time=time-1;
@@ -89,11 +91,6 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
         document.getElementById("time-remaining").innerHTML= time;
     }
-
-    //Get Card Information
-//    function getCardData(card){
-//        return card.getElementsByClassName('card-data')[0].src
- //   }
 
     //Check Match
     function checkMatch(){
