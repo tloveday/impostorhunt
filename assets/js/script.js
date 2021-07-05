@@ -12,8 +12,17 @@ var timer = null;
 
 document.addEventListener("DOMContentLoaded", () =>{
     
+    
     let cards = Array.from(document.getElementsByClassName('card'));
-    startTimer();
+    
+    document.getElementById("start").addEventListener("click", function() {
+        console.log ("Press Start")
+        startTimer();
+    });
+
+    document.getElementById("reset").addEventListener("click", function() {
+        console.log ("I pressed the reset")
+    });
 
 
     //make the cards clickable with the function 
