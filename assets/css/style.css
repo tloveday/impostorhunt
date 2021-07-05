@@ -35,6 +35,15 @@ footer{
     font-size: 30px;
 }
 
+h5{
+    font-family: 'Playfair Display SC', serif;
+    color: #ffffff; 
+}
+
+#impostor{
+    font-family: "Press Start 2P", cursive;
+    color: #f91f00;
+}
 /*-------------Cards---------------------*/
 .card{
     position: relative;
@@ -94,6 +103,19 @@ footer{
 
 .card.visible .card-front{
     transform: rotateY(0deg);
+}
+
+/* ------ Footer ----- */
+.impostor-links li a i {
+    width: 30px;
+    height: 30px;
+    padding: 10px 0;
+    border-radius: 45%;
+    font-size: 18px;
+    text-align: center;
+    line-height: 11px;
+    color: #d6e0f0;
+    background: #f91f00;
 }
 
 /* ------ Media Queries ----- */
