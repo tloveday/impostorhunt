@@ -94,9 +94,11 @@ document.addEventListener("DOMContentLoaded", () =>{
     function countDown(){
         time=time-1;
     
-        if (time <= 0){
+        if (time === 0){
             clearInterval(timer);
+            alert('Game Over')
             return;
+            
         }
         document.getElementById("time-remaining").innerHTML= time;
     }
