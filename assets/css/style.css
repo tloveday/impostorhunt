@@ -38,8 +38,8 @@ footer{
 /*-------------Cards---------------------*/
 .card{
     position: relative;
-    height: 170px;
-    width: 125px
+    height: 150px;
+    width: 100px
 }
 
 .card-general{
@@ -68,6 +68,14 @@ footer{
     backface-visibility: hidden;
 }
 
+.card-back img{
+    width: 95%;
+    height: 95%;
+}
+.card-front img{
+    width: 95%;
+    height: 95%;
+}
 /*-------------Game Structure---------------------*/
 .play-area{
     display: grid;
@@ -92,9 +100,18 @@ footer{
 @media (max-width: 600px){
     .play-area{
         grid-template-columns: repeat(3, auto);
+        grid-gap: 5px;
     }
     .card{
-        height: 150px;
-        width: 100px;
+        height: 100px;
+        width: 70px;
+    }
+    .card-back img{
+        height: 85%;
+        width: 85%;
+    }
+    .card-front img{
+        height: 85%;
+        width: 85%;
     }
 }
