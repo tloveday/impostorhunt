@@ -8,6 +8,9 @@ let card1, card2;
 var time = 100;
 var timer = null;
 
+//cards array
+const cardsArray = ["cyan", "cyan", "dead", "dead", "ghost", "ghost", "pink", "pink", "purple", "purple", "red", "red", "impostor", "white", "white"];
+
 //The Game will wait fo the Dom to complete loading before running
 
 document.addEventListener("DOMContentLoaded", () =>{
