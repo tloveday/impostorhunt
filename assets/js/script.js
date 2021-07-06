@@ -8,7 +8,6 @@ let card1, card2;
 var time = 100;
 var timer = null;
 
-
 //The Game will wait fo the Dom to complete loading before running
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -19,10 +18,14 @@ document.addEventListener("DOMContentLoaded", () =>{
     document.getElementById("start").addEventListener("click", function() {
         console.log ("Press Start")
         startTimer();
+
+        //gameStart function that starts the game
+        
     });
 
     document.getElementById("reset").addEventListener("click", function() {
         console.log ("I pressed the reset")
+        //reset function that resets the board.
     });
 
 
@@ -96,10 +99,9 @@ document.addEventListener("DOMContentLoaded", () =>{
         time=time-1;
     
         if (time === 0){
-            clearInterval(timer);
+            clearTimeout(timer);;
             alert('Game Over')
             return;
-            
         }
         document.getElementById("time-remaining").innerHTML= time;
     }
@@ -122,4 +124,13 @@ document.addEventListener("DOMContentLoaded", () =>{
             card1.classList.remove('visible');
             card2.classList.remove('visible');
         }, 500)
+    }
+
+    // Shuffle Cards- Fisher-Yates Shuffle Algorithm.
+    function shuffle(cardsArray){ 
+        for (let i = cardsArray.length - 1; i > 0; i--) {
+            let randIndex = Math.floor(Math.random() * (i + 1));
+            cardsArray[randIndex].style.order = i;
+            cardsArray[i].style.order = randIndex;
+        }
     }
