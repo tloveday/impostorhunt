@@ -9,7 +9,7 @@ var time = 100;
 var timer = null;
 
 //cards array
-const cardsArray = ["cyan", "cyan", "dead", "dead", "ghost", "ghost", "pink", "pink", "purple", "purple", "red", "red", "impostor", "white", "white"];
+let cardsArray = ["Cyan", "Cyan", "Dead", "Dead", "Ghost", "Ghost", "Pink", "Pink", "Purple", "Purple", "Red", "Red", "Warwick", "White", "White"];
 
 //The Game will wait fo the Dom to complete loading before running
 
@@ -17,10 +17,24 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     
     let cards = Array.from(document.getElementsByClassName('card'));
+
+    function updateCardBoard(cardsArray, shuffled_array){
+        card_array_length = cardsArray.length - 1;
+        index = 0; 
+        for (index; index <= card_array_length; index++) {
+            frontCard = cardsArray[index].getElementsByClassName('card-data')[0];
+            console.log(frontCard);
+            frontCard.setAttribute('src',  './assets/images/' + shuffled_array [index] + '.png');
+            // cardsArray[index].getElementsByClassName('card-front')[0].getElementsByClassName('card-data')[0].getAttribute('src', suffled_array[index]);
+        }
+    }
+
+
     
     document.getElementById("start").addEventListener("click", function() {
         console.log ("Press Start")
-        shuffle(cardsArray);
+        shuffledcardsArray = shuffle(cardsArray);
+        updateCardBoard(cards, shuffledcardsArray);
         startTimer();
 
         //gameStart function that starts the game
@@ -130,11 +144,18 @@ document.addEventListener("DOMContentLoaded", () =>{
         }, 500)
     }
 
-    // Shuffle Cards- Fisher-Yates Shuffle Algorithm.
-    function shuffle(cardsArray){ 
-        for (let i = cardsArray.length - 1; i > 0; i--) {
-            let randIndex = Math.floor(Math.random() * (i + 1));
-            cardsArray[randIndex].style.order = i;
-            cardsArray[i].style.order = randIndex;
+    // Shuffle Cards- Fisher-Yates Shuffle Algorithm. 
+    function shuffle(cardsArray){
+        shuffled_array = [];
+        card_array_length = cardsArray.length - 1;
+        last_index = card_array_length;
+        index = 0; 
+        for (index; index <= card_array_length; index++) {
+            randIndex = Math.floor(Math.random() * last_index);
+            shuffled_array[index] = cardsArray[randIndex];
+            cardsArray.splice(randIndex, 1);
+            last_index = last_index - 1;
         }
+        console.log(shuffled_array);
+        return shuffled_array;
     }
