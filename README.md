@@ -1,7 +1,7 @@
 `python3 -m http.server`
 
 # Impostor Hunt
-[View live project here] (website address)
+[View live project here:] (https://tloveday.github.io/impostorhunt/)
 
 Inspired by Twitch Streamer "Warwick Zero" and the game "Among Us" Imposter Hunt utilises both the main game dynamic of Among Us and that of traditional memory games. 
 
@@ -37,7 +37,7 @@ The Colour Scheme of the game is inspired by the Among Us' main colour schemes w
 All imagery is inspired by Among US and has been recreated and drawn by the Myself. The Impostor character is completely custom and created off the look of the Streamer Warwick Zero. These are technically fan art.
 
 ### Audio
-Audio is downloaded from the Official [Voicey] (https://www.voicy.network/official-soundboards/games/among-us#) soundboard. The effects selected match with areas of the game, both Victory and Defeat are in the same seelection. The Sound on Game Start comes from the reporting of a body in the game, Matched is the same effect used when players commit votes in Amoung US, the Flip sound comes from the in game message sound.
+Audio is downloaded from the Official [Voicey:] (https://www.voicy.network/official-soundboards/games/among-us#) soundboard. The effects selected match with areas of the game, both Victory and Defeat are in the same seelection. The Sound on Game Start comes from the reporting of a body in the game, Matched is the same effect used when players commit votes in Amoung US, the Flip sound comes from the in game message sound.
 ### Languages Used
 HTML
 CSS

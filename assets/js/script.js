@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     document.getElementById("start").addEventListener("click", function() {
         console.log ("Press Start")
+        shuffle(cardsArray);
         startTimer();
 
         //gameStart function that starts the game
