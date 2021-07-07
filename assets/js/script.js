@@ -9,7 +9,7 @@ var time = 100;
 var timer = null;
 
 //cards array
-let cardsArray = ["Cyan", "Cyan", "Dead", "Dead", "Ghost", "Ghost", "Pink", "Pink", "Purple", "Purple", "Red", "Red", "Warwick", "White", "White"];
+let cardsArray = ["Cyan", "Cyan", "Dead", "Dead", "Ghost", "Ghost", "Pink", "Pink", "Purple", "Purple", "Red", "Red", "Impostor", "White", "White"];
 
 //The Game will wait fo the Dom to complete loading before running
 
