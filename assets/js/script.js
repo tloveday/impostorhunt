@@ -51,54 +51,52 @@ document.addEventListener("DOMContentLoaded", () =>{
     cards.forEach(card =>{
       card.addEventListener('click', cardFlip);
     })
-
-    //Check for Impostor- Win Condition.
-    function check_if_impostor(clicked_char){
-        return setTimeout(function (){
-            if (clicked_char === 'impostor'){
-                alert('You won');
-                clearTimeout(timer);
-            }
-            else{
-                console.log('I clicked ', clicked_char);
-            }
-        }, 500);    
-    }
-
-
-
-    //CardFlip Function
-    function cardFlip(){
-      this.classList.add('visible');
-      //Votes climb with each click
-      voted();
-      //Cards Identitied made via the data attribute
-      clicked_char = this.getAttribute('data-char');
-      check_if_impostor(clicked_char);
-        //Give clicks identities to be checked
-        if(!flippedCard){
-            flippedCard = true;
-            card1 = this;
-        }else{ 
-            card2 = this;
-            flippedCard = false;
-            //Check for match
-            if (checkMatch()) {
-                console.log('We should lock the cards');
-                //stop the cards being repicked- once flipped.
-                card1.removeEventListener('click', cardFlip, false);
-                card2.removeEventListener('click', cardFlip, false);
-            }
-            else{
-                console.log('We should unflip the cards');
-                cardMisMatch();
-            }
-        } 
-      
-    }
-    
+   
     
 })
+
+//CardFlip Function
+function cardFlip(){
+    this.classList.add('visible');
+    //Votes climb with each click
+    voted();
+    //Cards Identitied made via the data attribute
+    clicked_char = this.getAttribute('data-char');
+    check_if_impostor(clicked_char);
+      //Give clicks identities to be checked
+      if(!flippedCard){
+          flippedCard = true;
+          card1 = this;
+      }else{ 
+          card2 = this;
+          flippedCard = false;
+          //Check for match
+          if (checkMatch()) {
+              console.log('We should lock the cards');
+              //stop the cards being repicked- once flipped.
+              card1.removeEventListener('click', cardFlip, false);
+              card2.removeEventListener('click', cardFlip, false);
+          }
+          else{
+              console.log('We should unflip the cards');
+              cardMisMatch();
+          }
+      } 
+    
+  }
+  
+  //Check for Impostor- Win Condition.
+  function check_if_impostor(clicked_char){
+    return setTimeout(function (){
+        if (clicked_char === 'impostor'){
+            alert('You won');
+            clearTimeout(timer);
+        }
+        else{
+            console.log('I clicked ', clicked_char);
+        }
+    }, 500);    
+}
 
     //Vote Counter rises with each click
     var votes = 0; 
