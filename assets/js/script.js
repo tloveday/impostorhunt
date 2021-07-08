@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     let cards = Array.from(document.getElementsByClassName('card'));
 
-    function updateCardBoard(cardsArray, shuffled_array){
+    function updateCardBoard(cardsArray, suffled_array){
         card_array_length = cardsArray.length - 1;
         index = 0; 
         for (index; index <= card_array_length; index++) {
             frontCard = cardsArray[index].getElementsByClassName('card-data')[0];
             console.log(frontCard);
-            frontCard.setAttribute('src',  './assets/images/' + shuffled_array [index] + '.png');
+            frontCard.setAttribute('src',  './assets/images/' + suffled_array [index] + '.png');
             // cardsArray[index].getElementsByClassName('card-front')[0].getElementsByClassName('card-data')[0].getAttribute('src', suffled_array[index]);
         }
     }
@@ -144,18 +144,18 @@ document.addEventListener("DOMContentLoaded", () =>{
         }, 500)
     }
 
-    // Shuffle Cards- Fisher-Yates Shuffle Algorithm. 
+    // Shuffle Cards- Fisher-Yates Shuffle Algorithm.
     function shuffle(cardsArray){
-        shuffled_array = [];
+        suffled_array = [];
         card_array_length = cardsArray.length - 1;
         last_index = card_array_length;
         index = 0; 
         for (index; index <= card_array_length; index++) {
             randIndex = Math.floor(Math.random() * last_index);
-            shuffled_array[index] = cardsArray[randIndex];
+            suffled_array[index] = cardsArray[randIndex];
             cardsArray.splice(randIndex, 1);
             last_index = last_index - 1;
         }
-        console.log(shuffled_array);
-        return shuffled_array;
+        console.log(suffled_array);
+        return suffled_array;
     }
