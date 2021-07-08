@@ -18,17 +18,16 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     let cards = Array.from(document.getElementsByClassName('card'));
 
-    function updateCardBoard(cardsArray, suffled_array){
+    function updateCardBoard(cardsArray, shuffled_array){
         card_array_length = cardsArray.length - 1;
         index = 0; 
         for (index; index <= card_array_length; index++) {
             frontCard = cardsArray[index].getElementsByClassName('card-data')[0];
             console.log(frontCard);
-            frontCard.setAttribute('src',  './assets/images/' + suffled_array [index] + '.png');
-            // cardsArray[index].getElementsByClassName('card-front')[0].getElementsByClassName('card-data')[0].getAttribute('src', suffled_array[index]);
+            frontCard.setAttribute('src',  './assets/images/' + shuffled_array [index] + '.png');
+            // cardsArray[index].getElementsByClassName('card-front')[0].getElementsByClassName('card-data')[0].getAttribute('src', shuffled_array[index]);
         }
     }
-
 
     
     document.getElementById("start").addEventListener("click", function() {
@@ -36,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         shuffledcardsArray = shuffle(cardsArray);
         updateCardBoard(cards, shuffledcardsArray);
         startTimer();
+        cardFlip();
 
         //gameStart function that starts the game
         
@@ -146,16 +146,16 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     // Shuffle Cards- Fisher-Yates Shuffle Algorithm.
     function shuffle(cardsArray){
-        suffled_array = [];
+        shuffled_array = [];
         card_array_length = cardsArray.length - 1;
         last_index = card_array_length;
         index = 0; 
         for (index; index <= card_array_length; index++) {
             randIndex = Math.floor(Math.random() * last_index);
-            suffled_array[index] = cardsArray[randIndex];
+            shuffled_array[index] = cardsArray[randIndex];
             cardsArray.splice(randIndex, 1);
             last_index = last_index - 1;
         }
-        console.log(suffled_array);
-        return suffled_array;
+        console.log(shuffled_array);
+        return shuffled_array;
     }
