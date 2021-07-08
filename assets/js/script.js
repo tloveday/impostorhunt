@@ -11,6 +11,12 @@ var timer = null;
 //cards array
 let cardsArray = ["Cyan", "Cyan", "Dead", "Dead", "Ghost", "Ghost", "Pink", "Pink", "Purple", "Purple", "Red", "Red", "Impostor", "White", "White"];
 
+//audio
+var flipSound = new Audio("assets/audio/flip.mp3");
+var startSound = new Audio("assets/audio/start.mp3");
+var defeatSound = new Audio("assets/audio/defeat.mp3");
+var victorySound = new Audio ("assets/audio/victory.mp3");
+var matchedSound = new Audio ("assets/audio/matched.mp3");
 //The Game will wait fo the Dom to complete loading before running
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -32,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     document.getElementById("start").addEventListener("click", function() {
         console.log ("Press Start")
+        startSound.play()
         shuffledcardsArray = shuffle(cardsArray);
         updateCardBoard(cards, shuffledcardsArray);
         startTimer();
-        
         //make the cards clickable with the function 
         cards.forEach(card =>{
             card.addEventListener('click', flipCard);
@@ -52,15 +58,12 @@ document.addEventListener("DOMContentLoaded", () =>{
         //reset function that resets the board.
     });
 
-
-
-   
-    
 })
 
 //Flip Card Function
 function flipCard(){
     this.classList.add('visible');
+    flipSound.play();
     //Votes climb with each click
     voteNumber();
     //Cards Identitied made via the data attribute
@@ -75,6 +78,7 @@ function flipCard(){
           flippedCard = false;
           //Check for match
           if (checkMatch()) {
+              matchedSound.play()
               console.log('We should lock the cards');
               //stop the cards being repicked- once flipped.
               card1.removeEventListener('click', flipCard, false);
@@ -92,7 +96,8 @@ function flipCard(){
   function checkImpostor(clickedCharacter){
     return setTimeout(function (){
         if (clickedCharacter === 'impostor'){
-            alert('You won');
+            victorySound.play()
+            alert('Victory! You Have Found The Impostor');
             clearTimeout(timer);
         }
         else{
@@ -119,6 +124,7 @@ function flipCard(){
     
         if (time === 0){
             clearTimeout(timer);;
+            defeatSound.play()
             alert('Game Over')
             return;
         }
@@ -129,6 +135,7 @@ function flipCard(){
     function checkMatch(){
         if (card1.getAttribute('data-char') === card2.getAttribute('data-char')){
             return true;
+            
         }
         else{
             false;
