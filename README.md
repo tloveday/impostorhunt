@@ -13,7 +13,7 @@ The brief was to build an interactive front-end site that responds to users' act
 ## Mock Up??
 ! [alt text] (img.jpg)
 
-## User Experience
+## User Experince
 ### New User
 - Have Fun playing a memory game which adds added win and loss goals.
 - Improve memory.
@@ -58,15 +58,21 @@ Javascript
 - [Procreate:] (https://procreate.art/) Procreate was used to create the visuals for the art used throughout the project.
 
 ## Testing
-Validates
+HTML was directly imput into (https://validator.w3.org/) and no warnings or errors were shown.
+CSS was directly imput into (https://jigsaw.w3.org/css-validator/) with results showing no warnings or errors. 
 
 ### User goals
+Each Goal has been met in my opinion.
+The new user 
 
 ### Further Testing
 Website was tested on a variety of browsers including Google Chrome, Safari, Firefox, And Edge.
 The website was viewed on a variety of devices including desktop, laptop and mobile on both iOS and Android.
 
 The Website was provided to friends and family and used on stream by both Warwick Zero and his mod team Vhler in order to obtain unbiased review and feedback on user experience from both the streamer and their chat.
+
+### Further Development
+With more time, confidence in my abilities and better understanding of Javascript I would liked to have added "Game Over" screens for Victory and Defeat upon winning or losing the game.
 
 ## Bugs
 
@@ -76,6 +82,8 @@ Building the card flip function.
 When adding the initial code all cards would turn face, without the need for a click. Which is counterproductive to the game. I've tried Jquery and could get the action to work but due to insecurities on jQuery knowledge I opted to write in plain javascipt.
 
 Through discussion with peers I came across the problem, the mistake and have made and the attempted.
+
+Following the addition of the shuffle cards function in the script.js file the game would match the old card placements with the new and often incorrect matches.
 
 
 ## Images
@@ -130,14 +138,18 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ## Credits
 
-
-
 ### Media
-
 -   All Images were created by the developer.
 
 ### Acknowledgements
 
--   My Mentor for continuous helpful feedback.
+-  My Mentor for continuous helpful feedback.
 
--   Tutor support at Code Institute for their support.
+-  Tutor support at Code Institute for their support.
+
+- My family for thier continual feedback and honest critique, thier support and love (Even Liwsi and your sleepless nights).
+
+- The Streamer Warwick Zero (https//:www.twitch.tv/warwickzero) and his community for their constant feedback, brutally honest critique and ever ending support that brought me out of dark thoughts. 
+
+### Final Thoughts
+This project has been one of the hardest tests I've ever experienced. I have sat through hours of youtube tutorials, on top of multiple re-watches of the entire module leading into the project. I have spent days looking at singular problems with no way forward, at several points during the process I have considered quitting the course completely due to the negative impact it was having on my mental health and personal  well-being. Whilst this may not be perfect or complete as I orginally wanted and intended it is the best that I can currently provide with my limited experince in Javascript. 

@@ -35,7 +35,13 @@ document.addEventListener("DOMContentLoaded", () =>{
         shuffledcardsArray = shuffle(cardsArray);
         updateCardBoard(cards, shuffledcardsArray);
         startTimer();
-        flipCard();
+        
+        //make the cards clickable with the function 
+        cards.forEach(card =>{
+            card.addEventListener('click', flipCard);
+        })
+
+
 
         //gameStart function that starts the game
         
