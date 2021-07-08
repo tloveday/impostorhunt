@@ -78,11 +78,11 @@ function flipCard(){
           flippedCard = false;
           //Check for match
           if (checkMatch()) {
-              matchedSound.play()
               console.log('We should lock the cards');
               //stop the cards being repicked- once flipped.
               card1.removeEventListener('click', flipCard, false);
               card2.removeEventListener('click', flipCard, false);
+              matchedSound.play()
           }
           else{
               console.log('We should unflip the cards');
