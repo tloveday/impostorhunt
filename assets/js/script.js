@@ -24,17 +24,6 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     let cards = Array.from(document.getElementsByClassName('card'));
 
-    function updateCardBoard(cardsArray, shuffled_array){
-        card_array_length = cardsArray.length - 1;
-        index = 0; 
-        for (index; index <= card_array_length; index++) {
-            frontCard = cardsArray[index].getElementsByClassName('card-data')[0];
-            console.log(frontCard);
-            frontCard.setAttribute('src',  './assets/images/' + shuffled_array [index] + '.png');
-            // cardsArray[index].getElementsByClassName('card-front')[0].getElementsByClassName('card-data')[0].getAttribute('src', shuffled_array[index]);
-        }
-    }
-
     
     document.getElementById("start").addEventListener("click", function() {
         console.log ("Press Start")
@@ -95,7 +84,7 @@ function flipCard(){
   //Check for Impostor- Win Condition.
   function checkImpostor(clickedCharacter){
     return setTimeout(function (){
-        if (clickedCharacter === 'impostor'){
+        if (clickedCharacter === 'Impostor'){
             victorySound.play()
             alert('Victory! You Have Found The Impostor');
             clearTimeout(timer);
@@ -166,4 +155,16 @@ function flipCard(){
         }
         console.log(shuffled_array);
         return shuffled_array;
+    }
+
+    //update the gameboard
+    function updateCardBoard(cardsArray, shuffled_array){
+        card_array_length = cardsArray.length - 1;
+        index = 0; 
+        for (index; index <= card_array_length; index++) {
+            frontCard = cardsArray[index].getElementsByClassName('card-data')[0];
+            console.log(frontCard);
+            frontCard.setAttribute('src',  './assets/images/' + shuffled_array [index] + '.png');
+            cardsArray[index].setAttribute('data-char', shuffled_array[index]);
+        }
     }
