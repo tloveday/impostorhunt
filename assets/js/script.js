@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         shuffledcardsArray = shuffle(cardsArray);
         updateCardBoard(cards, shuffledcardsArray);
         startTimer();
-        cardFlip();
+        flipCard();
 
         //gameStart function that starts the game
         
@@ -47,22 +47,19 @@ document.addEventListener("DOMContentLoaded", () =>{
     });
 
 
-    //make the cards clickable with the function 
-    cards.forEach(card =>{
-      card.addEventListener('click', cardFlip);
-    })
+
    
     
 })
 
-//CardFlip Function
-function cardFlip(){
+//Flip Card Function
+function flipCard(){
     this.classList.add('visible');
     //Votes climb with each click
-    voted();
+    voteNumber();
     //Cards Identitied made via the data attribute
-    clicked_char = this.getAttribute('data-char');
-    check_if_impostor(clicked_char);
+    clickedCharacter = this.getAttribute('data-char');
+    checkImpostor(clickedCharacter);
       //Give clicks identities to be checked
       if(!flippedCard){
           flippedCard = true;
@@ -74,8 +71,8 @@ function cardFlip(){
           if (checkMatch()) {
               console.log('We should lock the cards');
               //stop the cards being repicked- once flipped.
-              card1.removeEventListener('click', cardFlip, false);
-              card2.removeEventListener('click', cardFlip, false);
+              card1.removeEventListener('click', flipCard, false);
+              card2.removeEventListener('click', flipCard, false);
           }
           else{
               console.log('We should unflip the cards');
@@ -86,21 +83,21 @@ function cardFlip(){
   }
   
   //Check for Impostor- Win Condition.
-  function check_if_impostor(clicked_char){
+  function checkImpostor(clickedCharacter){
     return setTimeout(function (){
-        if (clicked_char === 'impostor'){
+        if (clickedCharacter === 'impostor'){
             alert('You won');
             clearTimeout(timer);
         }
         else{
-            console.log('I clicked ', clicked_char);
+            console.log('I clicked ', clickedCharacter);
         }
     }, 500);    
 }
 
     //Vote Counter rises with each click
     var votes = 0; 
-    function voted() {
+    function voteNumber() {
         votes ++ ;
         document.getElementById("votes").innerHTML = votes;
     };
