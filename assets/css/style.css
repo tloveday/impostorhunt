@@ -121,6 +121,7 @@ h5{
 
 /* ------ Media Queries ----- */
 @media (max-width: 600px){
+    
     .play-area{
         grid-template-columns: repeat(3, auto);
         grid-gap: 5px;
