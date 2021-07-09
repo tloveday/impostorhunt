@@ -48,36 +48,38 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 //Flip Card Function
 function flipCard(){
-    this.classList.add('visible');
-    flipSound.play();
+    if (this.classList.contains('visible')){
+        return
+    }else{
+        this.classList.add('visible');
+        flipSound.play();
     //Votes climb with each click
-    voteNumber();
+        voteNumber();
     //Cards Identitied made via the data attribute
-    clickedCharacter = this.getAttribute('data-char');
-    checkImpostor(clickedCharacter);
+        clickedCharacter = this.getAttribute('data-char');
+        checkImpostor(clickedCharacter);
       //Give clicks identities to be checked
-      if(!flippedCard){
-          flippedCard = true;
-          card1 = this;
-      }else{ 
-          card2 = this;
-          flippedCard = false;
-          //Check for match
-          if (checkMatch()) {
-              console.log('We should lock the cards');
-              //stop the cards being repicked- once flipped.
-              card1.removeEventListener('click', flipCard, false);
-              card2.removeEventListener('click', flipCard, false);
-              matchedSound.play()
-          }
-          else{
-              console.log('We should unflip the cards');
-              cardMisMatch();
-          }
-      } 
-    
-  }
-  
+        if(!flippedCard){
+              flippedCard = true;
+              card1 = this;
+        }else{ 
+              card2 = this;
+              flippedCard = false;
+            //Check for match
+            if (checkMatch()) {
+                  console.log('We should lock the cards');
+                //stop the cards being repicked- once flipped.
+                card1.removeEventListener('click', flipCard, false);
+                card2.removeEventListener('click', flipCard, false);
+                matchedSound.play()
+            }
+            else{
+                console.log('We should unflip the cards');
+                cardMisMatch();
+            }
+        } 
+    }
+}
   //Check for Impostor- Win Condition.
   function checkImpostor(clickedCharacter){
     return setTimeout(function (){
