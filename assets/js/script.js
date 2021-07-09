@@ -25,26 +25,31 @@ document.addEventListener("DOMContentLoaded", () =>{
     let cards = Array.from(document.getElementsByClassName('card'));
 
     //gameStart function that starts the game
-    document.getElementById("start").addEventListener("click", function() {
-        console.log ("Press Start")
-        startSound.play()
-        shuffledcardsArray = shuffle(cardsArray);
-        updateCardBoard(cards, shuffledcardsArray);
-        startTimer();
-        //make the cards clickable with the function 
-        cards.forEach(card =>{
-            card.addEventListener('click', flipCard);
-        })
-
-        
-    });
+    document.getElementById("start").addEventListener("click", startGame); 
 
     document.getElementById("reset").addEventListener("click", function() {
         console.log ("I pressed the reset")
+        
         //reset function that resets the board.
     });
 
+    // Game Start Function
+function startGame(){
+    console.log ("Press Start")
+    startSound.play();
+    shuffledcardsArray = shuffle(cardsArray);
+    updateCardBoard(cards, shuffledcardsArray);
+    startTimer();
+    //make the cards clickable with the function 
+    cards.forEach(card =>{
+        card.addEventListener('click', flipCard);
+    });
+    this.removeEventListener('click', startGame);
+};
+
 })
+
+
 
 //Flip Card Function
 function flipCard(){
