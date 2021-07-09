@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     let cards = Array.from(document.getElementsByClassName('card'));
 
-    
+    //gameStart function that starts the game
     document.getElementById("start").addEventListener("click", function() {
         console.log ("Press Start")
         startSound.play()
@@ -36,9 +36,6 @@ document.addEventListener("DOMContentLoaded", () =>{
             card.addEventListener('click', flipCard);
         })
 
-
-
-        //gameStart function that starts the game
         
     });
 
@@ -130,7 +127,6 @@ function flipCard(){
             false;
         }
     }
-    //card Match
     
     //Mismatch
     function cardMisMatch(){
@@ -143,28 +139,28 @@ function flipCard(){
 
     // Shuffle Cards- Fisher-Yates Shuffle Algorithm.
     function shuffle(cardsArray){
-        shuffled_array = [];
-        card_array_length = cardsArray.length - 1;
-        last_index = card_array_length;
+        shuffledArray = [];
+        cardArrayLength = cardsArray.length - 1;
+        lastIndex = cardArrayLength;
         index = 0; 
-        for (index; index <= card_array_length; index++) {
-            randIndex = Math.floor(Math.random() * last_index);
-            shuffled_array[index] = cardsArray[randIndex];
+        for (index; index <= cardArrayLength; index++) {
+            randIndex = Math.floor(Math.random() * lastIndex);
+            shuffledArray[index] = cardsArray[randIndex];
             cardsArray.splice(randIndex, 1);
-            last_index = last_index - 1;
+            lastIndex = lastIndex - 1;
         }
-        console.log(shuffled_array);
-        return shuffled_array;
+        console.log(shuffledArray);
+        return shuffledArray;
     }
 
     //update the gameboard
-    function updateCardBoard(cardsArray, shuffled_array){
-        card_array_length = cardsArray.length - 1;
+    function updateCardBoard(cardsArray, shuffledArray){
+        cardArrayLength = cardsArray.length - 1;
         index = 0; 
-        for (index; index <= card_array_length; index++) {
+        for (index; index <= cardArrayLength; index++) {
             frontCard = cardsArray[index].getElementsByClassName('card-data')[0];
             console.log(frontCard);
-            frontCard.setAttribute('src',  './assets/images/' + shuffled_array [index] + '.png');
-            cardsArray[index].setAttribute('data-char', shuffled_array[index]);
+            frontCard.setAttribute('src',  './assets/images/' + shuffledArray [index] + '.png');
+            cardsArray[index].setAttribute('data-char', shuffledArray[index]);
         }
     }
