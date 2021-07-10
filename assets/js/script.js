@@ -5,7 +5,7 @@
 
 let flippedCard = false;
 let card1, card2;
-var time = 100;
+var time = 75;
 var timer = null;
 
 //cards array
@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     function resetGame(){
         clearTimeout(timer);
-        time = 100;
+        time = 75;
         timer = null;
-        document.getElementById("time-remaining").innerHTML= 0;
+        document.getElementById("time-remaining").innerHTML= 75;
         votes = 0;
         document.getElementById("votes").innerHTML = votes;
         flippedCard = false;
