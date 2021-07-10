@@ -105,7 +105,11 @@ h5{
     transform: rotateY(0deg);
 }
 
-
+/* ------ Footer ----- */
+.headerimage img{
+    width: 75%;
+    height: 100%;
+}
 /* ------ Footer ----- */
 .impostor-links li a i {
     width: 30px;
