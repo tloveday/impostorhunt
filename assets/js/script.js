@@ -29,23 +29,43 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     document.getElementById("reset").addEventListener("click", function() {
         console.log ("I pressed the reset")
-        
+        resetGame();
         //reset function that resets the board.
     });
 
+
+    function resetGame(){
+        clearTimeout(timer);
+        time = 100;
+        timer = null;
+        document.getElementById("time-remaining").innerHTML= 0;
+        votes = 0;
+        document.getElementById("votes").innerHTML = votes;
+        flippedCard = false;
+        card1 = null;
+        card2 = null;
+        cards.forEach(card =>{
+            card.classList.remove('visible');
+        });
+        cards = Array.from(document.getElementsByClassName('card'));
+        cardsArray = ["Cyan", "Cyan", "Dead", "Dead", "Ghost", "Ghost", "Pink", "Pink", "Purple", "Purple", "Red", "Red", "Impostor", "White", "White"];
+        document.getElementById("start").addEventListener("click", startGame);
+    }
+
+
     // Game Start Function
-function startGame(){
-    console.log ("Press Start")
-    startSound.play();
-    shuffledcardsArray = shuffle(cardsArray);
-    updateCardBoard(cards, shuffledcardsArray);
-    startTimer();
-    //make the cards clickable with the function 
-    cards.forEach(card =>{
-        card.addEventListener('click', flipCard);
-    });
-    this.removeEventListener('click', startGame);
-};
+    function startGame(){
+        console.log ("Press Start")
+        startSound.play();
+        shuffledcardsArray = shuffle(cardsArray);
+        updateCardBoard(cards, shuffledcardsArray);
+        startTimer();
+        //make the cards clickable with the function 
+        cards.forEach(card =>{
+            card.addEventListener('click', flipCard);
+        });
+        this.removeEventListener('click', startGame);
+    };
 
 })
 
@@ -116,9 +136,9 @@ function flipCard(){
         time=time-1;
     
         if (time === 0){
-            clearTimeout(timer);;
-            defeatSound.play()
-            alert('Game Over')
+            clearTimeout(timer);
+            defeatSound.play();
+            alert('Game Over');
             return;
         }
         document.getElementById("time-remaining").innerHTML= time;

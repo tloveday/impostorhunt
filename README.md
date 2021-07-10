@@ -49,13 +49,18 @@ Javascript
 - [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
 - [Font Awesome:](https://fontawesome.com/)
+    - Font awesome was used for the social media images found in the projects footer.
+- [favconit:] (http://faviconit.com/en)
+    - Favconit was used to build and code the favcons that feature on the project.
 - [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
 - [Google Fonts:](https://fonts.google.com/)
-- JQuery
-- [Procreate:] (https://procreate.art/) Procreate was used to create the visuals for the art used throughout the project.
+    - Google Fonts provided the code for the fonts used throughout the project.
+- [Procreate:] (https://procreate.art/) 
+    - Procreate was used to create the visuals for the art used throughout the project.
+
 
 ## Testing
 HTML was directly imput into (https://validator.w3.org/) and no warnings or errors were shown.
@@ -63,28 +68,28 @@ CSS was directly imput into (https://jigsaw.w3.org/css-validator/) with results 
 
 ### User goals
 Each Goal has been met in my opinion.
-The new user 
 
 ### Further Testing
 Website was tested on a variety of browsers including Google Chrome, Safari, Firefox, And Edge.
 The website was viewed on a variety of devices including desktop, laptop and mobile on both iOS and Android.
 
-The Website was provided to friends and family and used on stream by both Warwick Zero and his mod team Vhler in order to obtain unbiased review and feedback on user experience from both the streamer and their chat.
+The Website was provided to friends and family and used on stream by both Warwick Zero and his mod team Vhler in order to obtain unbiased review and feedback on user experience from both the streamer and their chat. Reviews were generally positive with the community on a whole posting scores and times into the chat following play. Some bugs were found speciifically of users using iOS devices and the brower Safari.
 
 ### Further Development
 With more time, confidence in my abilities and better understanding of Javascript I would liked to have added "Game Over" screens for Victory and Defeat upon winning or losing the game.
 
 ## Bugs
 
-I found early bugs in using Safari for the game. The cards came pre-flipped and would flip the image across the Y axis as used in the transition this was corrected by hiding the backface of the card face.
+I found early bugs in using Safari for the game. The cards came pre-flipped and would flip the image across the Y axis as used in the transition this was corrected by hiding the backface of the card face. Bugs have continued to be a problem in Safari particularly for users using iOS devices with the card flip providing glitch like graphics. This is an issue which due to my limited experince has been impossible to solve.
 
 Building the card flip function.
 When adding the initial code all cards would turn face, without the need for a click. Which is counterproductive to the game. I've tried Jquery and could get the action to work but due to insecurities on jQuery knowledge I opted to write in plain javascipt.
 
 Through discussion with peers I came across the problem, the mistake and have made and the attempted.
 
-Following the addition of the shuffle cards function in the script.js file the game would match the old card placements with the new and often incorrect matches.
+Following the addition of the shuffle cards function in the script.js file the game would match the old card placements with the new and often incorrect matches. This has been corrected by having the javascript file write the new positions into the 'cards' data attribute as it writes the cards shuffled face image into the DOM.
 
+Throughout the build I continualy noticed that the game could be 'hacked' by users double-clicking on individual cards, this regisered the card as card2 and therefore a match in the game. this was corrected by adding a return out of the cardFlip function if the card contained the class 'visible'.
 
 ## Images
 
