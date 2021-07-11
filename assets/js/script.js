@@ -27,10 +27,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     //gameStart function that starts the game
     document.getElementById("start").addEventListener("click", startGame); 
 
+    //reset function that resets the board.
     document.getElementById("reset").addEventListener("click", function() {
-        console.log ("I pressed the reset")
         resetGame();
-        //reset function that resets the board.
     });
 
 
@@ -55,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     // Game Start Function
     function startGame(){
-        console.log ("Press Start")
         startSound.play();
         shuffledcardsArray = shuffle(cardsArray);
         updateCardBoard(cards, shuffledcardsArray);
@@ -67,57 +65,49 @@ document.addEventListener("DOMContentLoaded", () =>{
         this.removeEventListener('click', startGame);
     };
 
-})
-
-
-
-//Flip Card Function
-function flipCard(){
-    if (this.classList.contains('visible')){
-        return
-    }else{
-        this.classList.add('visible');
-        flipSound.play();
-    //Votes climb with each click
-        voteNumber();
-    //Cards Identitied made via the data attribute
-        clickedCharacter = this.getAttribute('data-char');
-        checkImpostor(clickedCharacter);
-      //Give clicks identities to be checked
-        if(!flippedCard){
-              flippedCard = true;
-              card1 = this;
-        }else{ 
-              card2 = this;
-              flippedCard = false;
-            //Check for match
-            if (checkMatch()) {
-                  console.log('We should lock the cards');
-                //stop the cards being repicked- once flipped.
-                card1.removeEventListener('click', flipCard, false);
-                card2.removeEventListener('click', flipCard, false);
-                matchedSound.play()
-            }
-            else{
-                console.log('We should unflip the cards');
-                cardMisMatch();
-            }
-        } 
+    //Flip Card Function
+    function flipCard(){
+        if (this.classList.contains('visible')){
+            return
+        }else{
+            this.classList.add('visible');
+            flipSound.play();
+        //Votes climb with each click
+            voteNumber();
+        //Cards Identitied made via the data attribute
+            clickedCharacter = this.getAttribute('data-char');
+            checkImpostor(clickedCharacter);
+        //Give clicks identities to be checked
+            if(!flippedCard){
+                flippedCard = true;
+                card1 = this;
+            }else{ 
+                card2 = this;
+                flippedCard = false;
+                //Check for match
+                if (checkMatch()) {
+                    //stop the cards being repicked- once flipped.
+                    card1.removeEventListener('click', flipCard, false);
+                    card2.removeEventListener('click', flipCard, false);
+                    matchedSound.play()
+                }else{
+                    cardMisMatch();
+                }
+            } 
+        }
     }
-}
-  //Check for Impostor- Win Condition.
-  function checkImpostor(clickedCharacter){
-    return setTimeout(function (){
-        if (clickedCharacter === 'Impostor'){
-            victorySound.play()
-            alert('Victory! You Have Found The Impostor');
-            clearTimeout(timer);
-        }
-        else{
-            console.log('I clicked ', clickedCharacter);
-        }
-    }, 500);    
-}
+    //Check for Impostor- Win Condition.
+    function checkImpostor(clickedCharacter){
+        return setTimeout(function (){
+            if (clickedCharacter === 'Impostor'){
+                victorySound.play()
+                alert('Victory! You Have Found The Impostor');
+                clearTimeout(timer);
+            }else{
+                return
+            }
+        }, 500);
+    }
 
     //Vote Counter rises with each click
     var votes = 0; 
@@ -140,17 +130,14 @@ function flipCard(){
             defeatSound.play();
             alert('Game Over');
             return;
-        }
-        document.getElementById("time-remaining").innerHTML= time;
+        }document.getElementById("time-remaining").innerHTML= time;
     }
 
     //Check Match
     function checkMatch(){
         if (card1.getAttribute('data-char') === card2.getAttribute('data-char')){
-            return true;
-            
-        }
-        else{
+            return true;   
+        }else{
             false;
         }
     }
@@ -176,7 +163,6 @@ function flipCard(){
             cardsArray.splice(randIndex, 1);
             lastIndex = lastIndex - 1;
         }
-        console.log(shuffledArray);
         return shuffledArray;
     }
 
@@ -186,8 +172,8 @@ function flipCard(){
         index = 0; 
         for (index; index <= cardArrayLength; index++) {
             frontCard = cardsArray[index].getElementsByClassName('card-data')[0];
-            console.log(frontCard);
             frontCard.setAttribute('src',  './assets/images/' + shuffledArray [index] + '.png');
             cardsArray[index].setAttribute('data-char', shuffledArray[index]);
         }
     }
+})
