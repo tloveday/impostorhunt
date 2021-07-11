@@ -1,5 +1,6 @@
 # Impostor Hunt
 [View live project here:] (https://tloveday.github.io/impostorhunt/)
+![Impostor Hunt](assets/images/ImpostorHuntMockUp.png)
 
 Inspired by Twitch Streamer "Warwick Zero" and the game "Among Us" Imposter Hunt utilises both the main game dynamic of Among Us and that of traditional memory games. 
 
@@ -8,10 +9,17 @@ This is the second of four Mile Stone Projects, and to date the most difficult a
 The brief was to build an interactive front-end site that responds to users' actions, allowing them to actively engage with data, alter the way the site displays the information to achieve their preferred goals.
 
 
-## Mock Up??
-![Impostor Hunt] (assets/images/ImpostorHuntMockUp.png)
+## Mock Up
+Wireframes for
+- Computer
+![Wireframe](assets/Wireframe/Computer.png)
+- Tablet
+![Wireframe](assets/Wireframe/Tablet.png)
+- Mobile
+![Wireframe](assets/Wireframe/Mobile.png)
 
 ## User Experince
+
 ### New User
 - Have Fun playing a memory game which adds added win and loss goals.
 - Improve memory.
@@ -48,7 +56,7 @@ Javascript
     - Bootstrap was used to assist with the responsiveness and styling of the website.
 - [Font Awesome:](https://fontawesome.com/)
     - Font awesome was used for the social media images found in the projects footer.
-- [favconit:] (http://faviconit.com/en)
+- [favconit:](http://faviconit.com/en)
     - Favconit was used to build and code the favcons that feature on the project.
 - [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
@@ -152,17 +160,19 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ## Credits
 
 ### Media
--   All Images were created by the developer.
+-   All Images were created by the developer
+- [Among-Us](https://innersloth.com/gameAmongUs.php) 
+
 
 ### Acknowledgements
 
--  My Mentor for continuous helpful feedback.
+-  My Mentor Antonio for helpful feedback, and much needed guidance along a difficult path.
 
 -  Tutor support at Code Institute for their support.
 
 - My family for thier continual feedback and honest critique, thier support and love (Even Liwsi and your sleepless nights).
 
-- The Streamer Warwick Zero (https//:www.twitch.tv/warwickzero) and his community for their constant feedback, brutally honest critique and ever ending support that brought me out of dark thoughts. 
+- The Streamer [Warwick-Zero](https//:www.twitch.tv/warwickzero) and his community for their constant feedback, brutally honest critique and ever ending support that brought me out of dark thoughts. 
 
 ### Final Thoughts
 This project has been one of the hardest tests I've ever experienced. I have sat through hours of youtube tutorials, on top of multiple re-watches of the entire module leading into the project. I have spent days looking at singular problems with no way forward, at several points during the process I have considered quitting the course completely due to the negative impact it was having on my mental health and personal  well-being. Whilst this may not be perfect or as I originally wanted and intended but it is the best that I can currently provide with my limited experience in Javascript. The deployed and submitted project is a personal triumph for myself and watching the reactions from the community of streamer "Warwick Zero" with the negativity I was experiencing around the build has made me realise I am capable, I can deliver - it might take me a little longer on occasion- but I can get it done, and not to place too much pressure on myself.

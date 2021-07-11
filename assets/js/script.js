@@ -2,7 +2,6 @@
 // Credit is given to my mentor Antionio for guidance throughout the document clarifying problems, conflicts.
 
 //variables
-
 let flippedCard = false;
 let card1, card2;
 var time = 75;
@@ -17,22 +16,19 @@ var startSound = new Audio("assets/audio/start.mp3");
 var defeatSound = new Audio("assets/audio/defeat.mp3");
 var victorySound = new Audio ("assets/audio/victory.mp3");
 var matchedSound = new Audio ("assets/audio/matched.mp3");
-//The Game will wait fo the Dom to complete loading before running
 
+//The Game will wait fo the Dom to complete loading before running
 document.addEventListener("DOMContentLoaded", () =>{
-    
     
     let cards = Array.from(document.getElementsByClassName('card'));
 
     //gameStart function that starts the game
     document.getElementById("start").addEventListener("click", startGame); 
 
-    //reset function that resets the board.
-    document.getElementById("reset").addEventListener("click", function() {
-        resetGame();
-    });
+    //reset button that resets the board.
+    document.getElementById("reset").addEventListener("click", resetGame);
 
-
+    //reset function
     function resetGame(){
         clearTimeout(timer);
         time = 75;
@@ -100,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     function checkImpostor(clickedCharacter){
         return setTimeout(function (){
             if (clickedCharacter === 'Impostor'){
+                //Timeout added so that Users can see they have found the Impostor
                 setTimeout(()=>{
                     victorySound.play()
                     alert('Victory! You Have Found The Impostor');
@@ -159,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         }, 500)
     }
 
-    // Shuffle Cards- Fisher-Yates Shuffle Algorithm.
+    // Shuffle Cards- Fisher-Yates Shuffle Algorithm - Code assisted by Mentor
     function shuffle(cardsArray){
         shuffledArray = [];
         cardArrayLength = cardsArray.length - 1;
