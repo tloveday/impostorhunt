@@ -100,9 +100,11 @@ document.addEventListener("DOMContentLoaded", () =>{
     function checkImpostor(clickedCharacter){
         return setTimeout(function (){
             if (clickedCharacter === 'Impostor'){
-                victorySound.play()
-                alert('Victory! You Have Found The Impostor');
-                clearTimeout(timer);
+                setTimeout(()=>{
+                    victorySound.play()
+                    alert('Victory! You Have Found The Impostor');
+                    clearTimeout(timer);
+                }, 200);
             }else{
                 return
             }
@@ -114,6 +116,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     function voteNumber() {
         votes ++ ;
         document.getElementById("votes").innerHTML = votes;
+        if (votes === 30){
+            clearTimeout(timer);
+            defeatSound.play();
+            alert('Defeat: You did not find the Impostor.');
+            return;
+        }
     };
 
     //Timer
@@ -128,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         if (time === 0){
             clearTimeout(timer);
             defeatSound.play();
-            alert('Game Over');
+            alert('Defeat: You did not find the Impostor.');
             return;
         }document.getElementById("time-remaining").innerHTML= time;
     }

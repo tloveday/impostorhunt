@@ -1,5 +1,3 @@
-`python3 -m http.server`
-
 # Impostor Hunt
 [View live project here:] (https://tloveday.github.io/impostorhunt/)
 
@@ -11,7 +9,7 @@ The brief was to build an interactive front-end site that responds to users' act
 
 
 ## Mock Up??
-! [alt text] (img.jpg)
+![Impostor Hunt] (assets/images/ImpostorHuntMockUp.png)
 
 ## User Experince
 ### New User
@@ -67,31 +65,41 @@ HTML was directly imput into (https://validator.w3.org/) and no warnings or erro
 CSS was directly imput into (https://jigsaw.w3.org/css-validator/) with results showing no warnings or errors. 
 
 ### User goals
-Each Goal has been met in my opinion.
+
+#### New User
+- Have Fun playing a memory game which adds added win and loss goals.
+- Improve memory.
+- Find information about the streamer "Warwick Zero".
+
+It is my belief through product testing with users first finding the project they meet all goals for the new user.
+
+#### Returning User
+- Beat previous time completing the hide and seek esque challenge.
+- Beat previous vote count in completing the hide and seek esque challenge.
+- Improve memory
+- Find the social media for the streamer "Warwick Zero".
+
+With friends tracking the process and progress of the project - especially those that follow the streamer "Warwick Zero" they've kept track of the progress they made and celebrate in the communities discord when they get better results.
 
 ### Further Testing
 Website was tested on a variety of browsers including Google Chrome, Safari, Firefox, And Edge.
 The website was viewed on a variety of devices including desktop, laptop and mobile on both iOS and Android.
 
-The Website was provided to friends and family and used on stream by both Warwick Zero and his mod team Vhler in order to obtain unbiased review and feedback on user experience from both the streamer and their chat. Reviews were generally positive with the community on a whole posting scores and times into the chat following play. Some bugs were found speciifically of users using iOS devices and the brower Safari.
+The Website was provided to friends and family and used on stream by both Warwick Zero and his mod team Vhler in order to obtain unbiased review and feedback on user experience from both the streamer and their chat. Reviews were generally positive with the community on a whole posting scores and times into the chat following play. Some bugs were found speciifically of users using iOS devices and the brower Safari. Suggestions followed that included ideas on shortening the length of the game timer and proposing a limit on the number of votes. Following this feedback - time was shortened to 75 seconds, and a vote cap at 30 picks were made.
 
 ### Further Development
-With more time, confidence in my abilities and better understanding of Javascript I would liked to have added "Game Over" screens for Victory and Defeat upon winning or losing the game.
+With more time, confidence in my abilities and better understanding of Javascript I would liked to have added "Game Over" screens for Victory and Defeat upon winning or losing the game rather than having the Javascript create an alert.
 
 ## Bugs
 
-I found early bugs in using Safari for the game. The cards came pre-flipped and would flip the image across the Y axis as used in the transition this was corrected by hiding the backface of the card face. Bugs have continued to be a problem in Safari particularly for users using iOS devices with the card flip providing glitch like graphics. This is an issue which due to my limited experince has been impossible to solve.
+I found early bugs in using Safari for the project. The cards came pre-flipped and would flip the image across the Y axis as used in the transition this was corrected by hiding the backface of the card face. Bugs have continued to be a problem in Safari particularly for users using iOS devices with the card flip providing glitch like graphics. This is an issue which due to my limited experince has been impossible to solve.
 
 Building the card flip function.
 When adding the initial code all cards would turn face, without the need for a click. Which is counterproductive to the game. I've tried Jquery and could get the action to work but due to insecurities on jQuery knowledge I opted to write in plain javascipt.
 
-Through discussion with peers I came across the problem, the mistake and have made and the attempted.
-
 Following the addition of the shuffle cards function in the script.js file the game would match the old card placements with the new and often incorrect matches. This has been corrected by having the javascript file write the new positions into the 'cards' data attribute as it writes the cards shuffled face image into the DOM.
 
 Throughout the build I continualy noticed that the game could be 'hacked' by users double-clicking on individual cards, this regisered the card as card2 and therefore a match in the game. this was corrected by adding a return out of the cardFlip function if the card contained the class 'visible'.
-
-## Images
 
 ## Deployment
 
@@ -157,4 +165,4 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 - The Streamer Warwick Zero (https//:www.twitch.tv/warwickzero) and his community for their constant feedback, brutally honest critique and ever ending support that brought me out of dark thoughts. 
 
 ### Final Thoughts
-This project has been one of the hardest tests I've ever experienced. I have sat through hours of youtube tutorials, on top of multiple re-watches of the entire module leading into the project. I have spent days looking at singular problems with no way forward, at several points during the process I have considered quitting the course completely due to the negative impact it was having on my mental health and personal  well-being. Whilst this may not be perfect or complete as I orginally wanted and intended it is the best that I can currently provide with my limited experince in Javascript. 
+This project has been one of the hardest tests I've ever experienced. I have sat through hours of youtube tutorials, on top of multiple re-watches of the entire module leading into the project. I have spent days looking at singular problems with no way forward, at several points during the process I have considered quitting the course completely due to the negative impact it was having on my mental health and personal  well-being. Whilst this may not be perfect or as I originally wanted and intended but it is the best that I can currently provide with my limited experience in Javascript. The deployed and submitted project is a personal triumph for myself and watching the reactions from the community of streamer "Warwick Zero" with the negativity I was experiencing around the build has made me realise I am capable, I can deliver - it might take me a little longer on occasion- but I can get it done, and not to place too much pressure on myself.
